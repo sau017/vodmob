@@ -1,0 +1,19 @@
+ID: MVOD07_MTA_PROJ
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: MVOD07_DB
+   type: hdb
+   path: MVOD07_DB
+   requires:
+    - name: hdi_MVOD07_DB
+
+resources:
+ - name: hdi_MVOD07_DB
+   parameters:
+      config:
+         schema: SCH_VOD07
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
